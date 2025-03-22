@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown dengan Animasi</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <div class="relative">
+        <!-- Icon Menu -->
+        <button id="menuButton" class="p-2 bg-gray-200 rounded-md">
+            ☰
+        </button>
+
+        <!-- Dropdown Menu -->
+        <div id="menuDropdown" 
+            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-300 scale-y-0 origin-top hidden"
+        >
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profil</a>
+            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Pengaturan</a>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuButton = document.getElementById("menuButton");
+            const menuDropdown = document.getElementById("menuDropdown");
+
+            menuButton.addEventListener("click", function() {
+                menuDropdown.classList.toggle("hidden");
+                menuDropdown.classList.toggle("scale-y-0");
+                menuDropdown.classList.toggle("scale-y-100");
+            });
+
+            // Klik di luar menu untuk menutupnya
+            document.addEventListener("click", function(event) {
+                if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
+                    menuDropdown.classList.add("hidden");
+                    menuDropdown.classList.add("scale-y-0");
+                    menuDropdown.classList.remove("scale-y-100");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

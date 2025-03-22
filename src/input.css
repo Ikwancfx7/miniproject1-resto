@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+.hover-menu{
+    @apply hover:tracking-normal hover:font-bold flex justify-center w-[120px];
+}
+.hover-menu2{
+    @apply hover:tracking-normal w-auto cursor-pointer;
+}
+.button-hubungi-kami{
+    @apply p-4 bg-amber-200 text-black hover:cursor-pointer rounded-xl hover:font-bold flex justify-center w-[150px];
+}
+.container2{
+    @apply w-[100%] max-w-[1700px] my-[0] mx-auto;
+    
+}
