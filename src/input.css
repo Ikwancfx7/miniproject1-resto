@@ -7,9 +7,15 @@
     @apply hover:tracking-normal w-auto cursor-pointer;
 }
 .button-hubungi-kami{
-    @apply p-4 bg-amber-200 text-black hover:cursor-pointer rounded-xl hover:font-bold flex justify-center w-[150px];
+    @apply p-4 bg-green-400 text-gray-50 hover:cursor-pointer rounded-xl hover:font-bold flex justify-center w-[150px];
 }
 .container2{
     @apply w-[100%] max-w-[1700px] my-[0] mx-auto;
     
+}
+.form1{
+    @apply w-70 border-1 border-black h-10 rounded-lg p-4
+}
+.reservasi{
+    @apply flex-col h-20 gap-1
 }
