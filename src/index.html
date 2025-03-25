@@ -10,48 +10,43 @@
 </head>
 <body class="font-[Inter]">
     <header class="flex relative justify-center">
-        <img class="flex brightness-50 w-full h-100 object-cover" src="./picture/BG-1.jpg" alt="bground"/>
-        <div class="container2 absolute flex flex-col text-white pt-10 w-full">
-            <div class="flex flex-row justify-between px-13 lg:px-20 items-center">
-                <div class="flex bg-green-400 rounded-xl p-4">
-                    <a href="#" class="text-black ">Nama Restaurant</a>
+        <img class="flex brightness-30 w-full h-100 object-cover" src="./picture/BG-1.jpg" alt="bground"/>
+        <div class="container2 absolute flex flex-col text-white lg:pt-10 w-full">
+            <div class="flex flex-row justify-between bg-black lg:bg-transparent h-20 px-5 lg:px-20 items-center">
+                <div class="">
+                    <a href="#" class="text-white text-xl lg:text-5xl font-extralight">IKWAN RESTO</a>
                 </div>
                 
                 <div class="hidden lg:flex">
                     <ul class="flex flex-row items-center lg:pr-8">
                         <li class="hover-menu"><a href="#">HOME</a></li>
-                        <li class="hover-menu"><a href="#">MENU</a></li>
+                        <li class="hover-menu"><a href="./indexMenu.html">MENU</a></li>
                         <li class="hover-menu"><a href="./indexReservation.html">RESERVATION</a></li>
                     </ul>
-                    <button type="button"><p class="button-hubungi-kami">ORDER ONLINE</p></button>
+                    <button type="button"><a class="button-hubungi-kami" href="./indexOrder.html">ORDER ONLINE</a></button>
                 </div>
-                <div class="flex lg:hidden">
+                <div class="lg:hidden">
                     <button>
                         <img 
                         id="menuButton"
-                        class="w-9 h-7 flex lg:hidden hover:scale-110 hover:cursor-pointer"
+                        class="w-9 h-5 flex lg:hidden hover:scale-110 hover:cursor-pointer"
                         src="./picture/Bar-putih.png" alt="bar">
                     </button>
                 </div>
             </div>
             <div 
                 id="listMenu" 
-                class="flex flex-col absolute justify-center items-end w-full mt-14 pr-3 gap-1 lg:hidden overflow-hidden transition transition-all duration-1000 scale-y-0 origin-top hidden">
-                <ul class="flex flex-col justify-center items-center gap-y-2">
-                    <li class="hover-menu"><a href="#">Home</a></li>
-                    <li class="hover-menu"><a href="#">Menu</a></li>
-                    <li class="hover-menu"><a href="#">Reservation</a></li>
-                    <li class="hover-menu"><a href="#">Order Online</a></li>
+                class="flex absolute left-0 bg-gray-900 justify-center w-full mt-20 pr-3 gap-2 lg:hidden opacity-0 scale-y-0 transform origin-top transition-all duration-300 ease-in-out">
+                <ul class="grid grid-cols-1 place-items-center text-gray-200">
+                    <li class="hover-menu-2"><a href="./index.html">HOME</a></li>
+                    <li class="hover-menu-2"><a href="./indexMenu.html">MENU</a></li>
+                    <li class="hover-menu-2"><a href="./indexReservation.html">RESERVATION</a></li>
+                    <li class="hover-menu-2"><a href="./indexOrder.html">ORDER ONLINE</a></li>
                 </ul>
             </div>
             
             <div class="flex flex-col items-center justify-center h-30 mt-45">
-                <h1 class="text-4xl h-[50px]">HOME</h1>
-                <div >
-                    <p class="flex flex-row">
-                        <a href="#" class="hover-menu2">Home</a> > <a href="#" class="hover-menu2"></a> 
-                    </p>
-                </div>
+                <h1 class="text-4xl h-[47px]">HOME</h1>
             </div>
         </div>
     </header>
@@ -88,7 +83,7 @@
                             <p>Kamis</p>
                             <p>Jumat</p>
                             <p>Sabtu</p>
-                            <p>Monday</p>
+                            <p>Minggu</p>
                         </div>
                         <div>
                             <p>07:00 - 20:00</p>
@@ -106,7 +101,7 @@
                     <h1>NEWSLETTER</h1>
                 </div>
             </div>
-            <div class="py-10">
+            <div class="">
                 <h1>copyright@2025</h1>
             </div>
         </div>

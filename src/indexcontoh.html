@@ -3,46 +3,101 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dropdown dengan Animasi</title>
+    <title>Pemesanan Makanan Online</title>
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <div class="relative">
-        <!-- Icon Menu -->
-        <button id="menuButton" class="p-2 bg-gray-200 rounded-md">
-            ☰
-        </button>
+<body class="bg-gray-100 p-6">
 
-        <!-- Dropdown Menu -->
-        <div id="menuDropdown" 
-            class="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg overflow-hidden transform transition-all duration-300 scale-y-0 origin-top hidden"
-        >
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Home</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Profil</a>
-            <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-gray-200">Pengaturan</a>
+    <!-- Navbar -->
+    <nav class="bg-white shadow-md p-4 flex justify-between items-center">
+        <h1 class="text-2xl font-bold">FoodOrder</h1>
+        <button id="cart-button" class="bg-blue-500 text-white px-4 py-2 rounded">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+    </nav>
+
+    <!-- Daftar Menu -->
+    <div class="container mx-auto mt-6">
+        <h2 class="text-xl font-semibold mb-4">Pilih Menu</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+            <!-- Item Menu -->
+            <div class="bg-white p-4 shadow rounded text-center">
+                <h3 class="text-lg font-semibold">Nasi Goreng</h3>
+                <p class="text-gray-600">Rp 25.000</p>
+                <button onclick="addToCart('Nasi Goreng', 25000)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Tambah</button>
+            </div>
+            <div class="bg-white p-4 shadow rounded text-center">
+                <h3 class="text-lg font-semibold">Mie Ayam</h3>
+                <p class="text-gray-600">Rp 20.000</p>
+                <button onclick="addToCart('Mie Ayam', 20000)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Tambah</button>
+            </div>
+            <div class="bg-white p-4 shadow rounded text-center">
+                <h3 class="text-lg font-semibold">Ayam Geprek</h3>
+                <p class="text-gray-600">Rp 30.000</p>
+                <button onclick="addToCart('Ayam Geprek', 30000)" class="mt-2 bg-green-500 text-white px-4 py-2 rounded">Tambah</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Keranjang -->
+    <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+        <div class="bg-white p-6 rounded shadow-lg w-96">
+            <h2 class="text-xl font-semibold mb-4">Keranjang Belanja</h2>
+            <ul id="cart-items" class="space-y-2"></ul>
+            <p class="font-bold mt-4">Total: Rp <span id="cart-total">0</span></p>
+            <div class="mt-4 flex justify-between">
+                <button onclick="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded">Hapus Semua</button>
+                <button onclick="closeCart()" class="bg-gray-500 text-white px-4 py-2 rounded">Pesan Sekarang</button>
+            </div>
         </div>
     </div>
 
     <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuButton = document.getElementById("menuButton");
-            const menuDropdown = document.getElementById("menuDropdown");
+        let cart = [];
 
-            menuButton.addEventListener("click", function() {
-                menuDropdown.classList.toggle("hidden");
-                menuDropdown.classList.toggle("scale-y-0");
-                menuDropdown.classList.toggle("scale-y-100");
+        function addToCart(name, price) {
+            cart.push({ name, price });
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItems = document.getElementById("cart-items");
+            const cartCount = document.getElementById("cart-count");
+            const cartTotal = document.getElementById("cart-total");
+            
+            cartItems.innerHTML = "";
+            let total = 0;
+            
+            cart.forEach((item, index) => {
+                total += item.price;
+                cartItems.innerHTML += `
+                    <li class="flex justify-between bg-gray-200 p-2 rounded">
+                        <span>${item.name}</span>
+                        <button onclick="removeFromCart(${index})" class="text-red-500">❌</button>
+                    </li>
+                `;
             });
 
-            // Klik di luar menu untuk menutupnya
-            document.addEventListener("click", function(event) {
-                if (!menuButton.contains(event.target) && !menuDropdown.contains(event.target)) {
-                    menuDropdown.classList.add("hidden");
-                    menuDropdown.classList.add("scale-y-0");
-                    menuDropdown.classList.remove("scale-y-100");
-                }
-            });
+            cartCount.innerText = cart.length;
+            cartTotal.innerText = total.toLocaleString();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCart();
+        }
+
+        function clearCart() {
+            cart = [];
+            updateCart();
+        }
+
+        function closeCart() {
+            document.getElementById("cart-modal").classList.add("hidden");
+        }
+
+        document.getElementById("cart-button").addEventListener("click", () => {
+            document.getElementById("cart-modal").classList.remove("hidden");
         });
     </script>
+
 </body>
 </html>
