@@ -28,3 +28,9 @@
 .custom-item{
     @apply bg-white p-4 shadow-xl rounded-md text-center;
 }
+.image-aspec{
+    @apply aspect-video h-68 object-cover;
+}
+.custom-text1{
+    @apply text-4xl lg:text-5xl font-extralight h-[47px];
+}

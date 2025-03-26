@@ -38,34 +38,42 @@
                 id="listMenu" 
                 class="flex absolute left-0 bg-gray-900 justify-center w-full mt-20 pr-3 gap-2 lg:hidden opacity-0 scale-y-0 transform origin-top transition-all duration-300 ease-in-out">
                 <ul class="grid grid-cols-1 place-items-center text-gray-200">
-                    <li class="hover-menu-2"><a href="#">HOME</a></li>
+                    <li class="hover-menu-2"><a href="./index.html">HOME</a></li>
                     <li class="hover-menu-2"><a href="./indexMenu.html">MENU</a></li>
                     <li class="hover-menu-2"><a href="./indexReservation.html">RESERVATION</a></li>
-                    <li class="hover-menu-2"><a href="#">ORDER ONLINE</a></li>
+                    <li class="hover-menu-2"><a href="./indexOrder.html">ORDER ONLINE</a></li>
                 </ul>
             </div>
             
             <div class="flex flex-col items-center justify-center h-30 mt-45">
-                <h1 class="text-4xl h-[47px]">RESERVATION</h1>
+                <h1 class="custom-text1">RESERVATION</h1>
             </div>
         </div>
     </header>
 
     <section class="w-full bg-amber-100 p-10">
         <div class="container2 flex flex-col items-center justify-center gap-8 border-2 p-8">
-            <h1 class="text-3xl lg:text-4xl">RESERVASION</h1>
-            <form action="" class="flex flex-col lg:flex-row lg:gap-x-8">
-                <div class="flex reservasi">
-                    <label for="jumlah"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1" stroke-dashoffset="0"/><path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z" stroke-dashoffset="0"/></g></svg></label>
-                    <input type="text" id="jumlah" class="form1" placeholder="Jumlah">
+            <h1 class="text-xl lg:text-3xl">Formulir Reservasi</h1>
+            <form action="" class="flex flex-col lg:gap-x-8">
+                <div class="flex justify-center items-center">
+                    <div class="flex reservasi">
+                        <label for="nama">Nama:</label>
+                        <input type="text" class="form1" id="nama" name="nama" placeholder="Nama">
+                    </div>
                 </div>
-                <div class="flex reservasi">
-                    <label for="tanggal"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><path fill="currentColor" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/></svg></label>
-                    <input type="date" id="tanggal" class="form1" placeholder="">
-                </div>
-                <div class="flex reservasi">
-                    <label for="waktu"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 2a1 1 0 0 1 .993.883L13 7v4.586l2.707 2.707a1 1 0 0 1-1.32 1.497l-.094-.083l-3-3a1 1 0 0 1-.284-.576L11 12V7a1 1 0 0 1 1-1"/></g></svg></label>
-                    <input type="time" id="waktu" class="form1" placeholder="">
+                <div class="flex flex-col lg:flex-row lg:gap-x-8">
+                    <div class="flex reservasi">
+                        <label for="jumlah"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1" stroke-dashoffset="0"/><path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z" stroke-dashoffset="0"/></g></svg></label>
+                        <input type="text" id="jumlah" class="form1" placeholder="Jumlah">
+                    </div>
+                    <div class="flex reservasi">
+                        <label for="tanggal"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><path fill="currentColor" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/></svg></label>
+                        <input type="date" id="tanggal" class="form1" placeholder="">
+                    </div>
+                    <div class="flex reservasi">
+                        <label for="waktu"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 2a1 1 0 0 1 .993.883L13 7v4.586l2.707 2.707a1 1 0 0 1-1.32 1.497l-.094-.083l-3-3a1 1 0 0 1-.284-.576L11 12V7a1 1 0 0 1 1-1"/></g></svg></label>
+                        <input type="time" id="waktu" class="form1" placeholder="">
+                    </div>
                 </div>
             </form>
             <form action="">
