@@ -23,7 +23,7 @@
     @apply flex-col h-20 gap-1;
 }
 .custom-tambah{
-    @apply mt-2 bg-green-500 text-white px-4 py-2 rounded cursor-pointer;
+    @apply mt-2 bg-green-500 text-white px-4 py-2 rounded cursor-pointer hover:font-bold;
 }
 .custom-item{
     @apply bg-white p-4 shadow-xl rounded-md text-center;
@@ -33,4 +33,7 @@
 }
 .custom-text1{
     @apply text-4xl lg:text-5xl font-extralight h-[47px];
+}
+.subscribe{
+    @apply flex cursor-pointer bg-amber-600 hover:bg-amber-700 w-90 h-10 rounded-[2px] items-center justify-center;
 }

@@ -6,9 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./output.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <title>Document</title>
+    <title>Ikwan Resto | Order Online</title>
 </head>
 <body class="font-[Inter]">
+    <!-- HEADER -->
     <header class="flex relative justify-center">
         <img class="flex brightness-30 w-full h-100 object-cover" src="./picture/BG-1.jpg" alt="bground"/>
         <div class="container2 absolute flex flex-col text-white lg:pt-10 w-full">
@@ -45,18 +46,18 @@
                 </ul>
             </div>
             
-            <div class="flex flex-col items-center justify-center h-30 mt-45">
+            <div class="flex flex-col items-center justify-center h-30 mt-45 lg:mt-40">
                 <h1 class="custom-text1">ORDER ONLINE</h1>
             </div>
         </div>
     </header>
-
+    <!-- CONTENT SECTION -->
     <section class="w-full bg-amber-50 p-10">
         <div class="container2">
             <!-- Navbar kedua-->
             <nav class="bg-white shadow-md p-4 flex justify-between items-center">
                 <h1 class="text-2xl font-bold">FoodOrder</h1>
-                <button id="cart-button" class="bg-blue-500 text-white px-4 py-2 rounded cursor-pointer">🛒 Keranjang (<span id="cart-count">0</span>)</button>
+                <button id="cart-button" class="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">🛒 Keranjang (<span id="cart-count">0</span>)</button>
             </nav>
 
             <!-- Daftar Menu -->
@@ -82,54 +83,91 @@
                 <div class="custom-item">
                     <h3 class="text-lg font-semibold">Mie Goreng</h3>
                     <p class="text-gray-600">Rp 20.000</p>
-                    <button onclick="addToCart('Ayam Geprek', 20000)" class="custom-tambah">Tambah</button>
+                    <button onclick="addToCart('Mie Goreng', 20000)" class="custom-tambah">Tambah</button>
                 </div>
                 <div class="custom-item">
                     <h3 class="text-lg font-semibold">Ayam Bakar</h3>
                     <p class="text-gray-600">Rp 30.000</p>
-                    <button onclick="addToCart('Ayam Geprek', 30000)" class="custom-tambah">Tambah</button>
+                    <button onclick="addToCart('Ayam Bakar', 30000)" class="custom-tambah">Tambah</button>
                 </div>
                 <div class="custom-item">
                     <h3 class="text-lg font-semibold">Nila Bakar</h3>
                     <p class="text-gray-600">Rp 30.000</p>
-                    <button onclick="addToCart('Ayam Geprek', 30000)" class="custom-tambah">Tambah</button>
+                    <button onclick="addToCart('Nila Bakar', 30000)" class="custom-tambah">Tambah</button>
+                </div>
+                <div class="custom-item">
+                    <h3 class="text-lg font-semibold">Es Teler</h3>
+                    <p class="text-gray-600">Rp 15.000</p>
+                    <button onclick="addToCart('Es Teler', 15000)" class="custom-tambah">Tambah</button>
+                </div>
+                <div class="custom-item">
+                    <h3 class="text-lg font-semibold">Es Teh</h3>
+                    <p class="text-gray-600">Rp 5.000</p>
+                    <button onclick="addToCart('Es Teh', 5000)" class="custom-tambah">Tambah</button>
+                </div>
+                <div class="custom-item">
+                    <h3 class="text-lg font-semibold">Jus Alpukat</h3>
+                    <p class="text-gray-600">Rp 15.000</p>
+                    <button onclick="addToCart('Jus Alpukat', 15000)" class="custom-tambah">Tambah</button>
+                </div>
+                <div class="custom-item">
+                    <h3 class="text-lg font-semibold">Jus Mangga</h3>
+                    <p class="text-gray-600">Rp 14.000</p>
+                    <button onclick="addToCart('Jus Mangga', 14000)" class="custom-tambah">Tambah</button>
                 </div>
                 </div>
             </div>
 
-        <!-- Keranjang -->
+            <!-- Keranjang -->
             <div id="cart-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
                 <div class="bg-white p-6 rounded shadow-lg w-96 flex flex-col ">
                     <h2 class="text-xl font-semibold mb-4">Keranjang Belanja</h2>
                     <ul id="cart-items" class="space-y-2"></ul>
                     <p class="font-bold mt-4">Total: Rp <span id="cart-total">0</span></p>
                     <div class="mt-4 flex justify-between">
-                        <button onclick="clearCart()" class="bg-red-500 text-white px-4 py-2 rounded cursor-pointer">Hapus Semua</button>
-                        <button onclick="closeCart()" class="bg-gray-500 text-white px-4 py-2 rounded cursor-pointer">Tutup</button>
+                        <button onclick="clearCart()" class="bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded cursor-pointer">Hapus Semua</button>
+                        <button onclick="closeCart()" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded cursor-pointer">Tutup</button>
                     </div>
-                    <button onclick="orderCart()" class="flex justify-center cursor-pointer bg-green-400 text-white px-4 py-2 rounded mt-5">Bayar Sekarang</button>
+                    <button id="order-click" onclick="orderCart()" 
+                        class="flex justify-center cursor-pointer bg-green-400 text-white px-4 py-2 rounded mt-5 aria-disabled:pointer-events-none aria-disabled:opacity-50">
+                        Pesan Sekarang
+                    </button>
+                </div>
+            </div>
+            <!-- Pop Up pesanan sukses -->
+            <div id="success-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center h-full">
+                <div class="bg-white p-6 rounded shadow-lg text-center w-[90%] lg:w-[50%]">
+                    <h2 class="text-xl font-semibold text-green-600">✅ Pesanan Diterima!</h2>
+                    <p class="mt-2 text-gray-700">Terima kasih telah memesan. Kami akan segera memproses pesanan Anda.</p>
+                    <button onclick="closeSuccessModal()" class="mt-4 bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded cursor-pointer">OK</button>
                 </div>
             </div>
         </div>
     </section>
-
-    <footer class="w-full bg-black p-10 text-amber-50">
+    <!-- FOOTER -->
+    <footer class="w-full bg-black p-10 text-amber-100">
         <div class="flex flex-col items-center justify-center">
             <div class="container2 flex flex-col items-center lg:grid lg:grid-cols-3 lg:justify-center lg:items-start">
                 <div class="flex flex-col items-center py-5 lg:hidden ">
                     <h1>NEWSLETTER</h1>
+                    <label for="newsletter" class="opacity-70">Dapatkan informasi dan promo terbaru dari kami.</label>
+                    <form class="flex flex-col justify-center items-center opacity-90">
+                        <input type="email" class="bg-gray-950 h-12 w-90 my-3" placeholder="Masukkan alamat email">
+                        <label for="subscribe" class="subscribe"><p>Subscribe</p></label>
+                        <input type="submit" id="subscribe" class="hidden">
+                    </form>
                 </div>
                 <div class="flex flex-col items-center py-5">
                     <h1>ADDRESS</h1>
-                    <p class="text-justify">Jl. Dr. Muwardi I no 15A, Grogol, Jakarta Barat, 11450021 2295 6067 | info@ikwanresto.com</p>
+                    <p class="text-justify opacity-70">Jl. Gatot Subroto, Purwokerto Barat, Banyumas, 11450021 2295 6067 | info@ikwanresto.com</p>
                 </div>
                 <div class="flex flex-col items-center py-5">
                     <h1>OPEN HOURS</h1>
-                    <div class="grid grid-cols-2 lg:hidden">
+                    <div class="grid grid-cols-2 lg:hidden opacity-70">
                         <p>Setiap Hari</p>
                         <p>07:00 - 20:00</p>
                     </div>
-                    <div class="hidden lg:grid lg:grid-cols-2 ">
+                    <div class="hidden lg:grid lg:grid-cols-2 opacity-70">
                         <div>
                             <p>Senin</p>
                             <p>Selasa</p>
@@ -151,12 +189,18 @@
                     </div>
                     
                 </div>
-                <div class="hidden lg:flex lg:flex-col lg:items-center lg:py-5">
+                <div class="hidden lg:flex lg:flex-col lg:items-center lg:py-5 lg:justify-center">
                     <h1>NEWSLETTER</h1>
+                    <label for="newsletter" class="opacity-70">Dapatkan informasi dan promo terbaru dari kami.</label>
+                    <form class="flex flex-col justify-center items-center opacity-90">
+                        <input type="email" class="bg-gray-950 h-12 w-90 my-3" placeholder="Masukkan alamat email">
+                        <label for="subscribe" class="subscribe"><p>Subscribe</p></label>
+                        <input type="submit" id="subscribe" class="hidden">
+                    </form>
                 </div>
             </div>
             <div class="">
-                <h1>copyright@2025</h1>
+                <h1 class="opacity-70">copyright @2025 <b>Ikwan Resto</b> - All rights reserved</h1>
             </div>
         </div>
     </footer>
