@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+.hover-menu{
+    @apply hover:tracking-normal hover:font-bold flex justify-center lg:w-[120px];
+}
+.hover-menu-2{
+    @apply hover:tracking-normal hover:font-bold flex justify-center border-b-1 border-gray-950 w-[100vw] p-2;
+}
+.gulir{
+    @apply opacity-0 scale-y-0 transform origin-top transition-all duration-300 ease-in-out;
+}
+.button-hubungi-kami{
+    @apply text-green-50 hover:tracking-normal hover:cursor-pointer hover:font-bold flex justify-center w-[120px];
+}
+.container2{
+    @apply w-[100%] max-w-[1700px] my-[0] mx-auto;
+    
+}
+.form1{
+    @apply w-70 border-1 border-black h-10 rounded-lg p-4;
+}
+.reservasi{
+    @apply flex-col h-20 gap-1;
+}
+.custom-tambah{
+    @apply mt-2 bg-green-500 text-white px-4 py-2 rounded cursor-pointer hover:font-bold;
+}
+.custom-item{
+    @apply bg-white p-4 shadow-xl rounded-md text-center;
+}
+.image-aspec{
+    @apply aspect-video h-68 object-cover;
+}
+.custom-text1{
+    @apply text-4xl lg:text-5xl font-extralight h-[47px];
+}
+.subscribe{
+    @apply flex cursor-pointer bg-amber-600 hover:bg-amber-700 w-90 h-10 rounded-[2px] items-center justify-center;
+}

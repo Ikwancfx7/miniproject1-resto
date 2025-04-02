@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Ikwan Resto | Reservation</title>
+</head>
+<body class="font-[Inter]">
+    <!-- HEADER -->
+    <header class="flex relative justify-center">
+        <img class="flex brightness-30 w-full h-100 object-cover" src="./picture/BG-1.jpg" alt="bground"/>
+        <div class="container2 absolute flex flex-col text-white lg:pt-10 w-full">
+            <div class="flex flex-row justify-between bg-black lg:bg-transparent h-20 px-5 lg:px-20 items-center">
+                <div class="">
+                    <a href="#" class="text-white text-xl lg:text-5xl font-extralight">IKWAN RESTO</a>
+                </div>
+                
+                <div class="hidden lg:flex">
+                    <ul class="flex flex-row items-center lg:pr-8">
+                        <li class="hover-menu"><a href="./index.html">HOME</a></li>
+                        <li class="hover-menu"><a href="./indexMenu.html">MENU</a></li>
+                        <li class="hover-menu"><a href="./indexReservation.html">RESERVATION</a></li>
+                    </ul>
+                    <button type="button"><a class="button-hubungi-kami" href="./indexOrder.html">ORDER ONLINE</a></button>
+                </div>
+                <div class="lg:hidden">
+                    <button>
+                        <img 
+                        id="menuButton"
+                        class="w-9 h-5 flex lg:hidden hover:scale-110 hover:cursor-pointer"
+                        src="./picture/Bar-putih.png" alt="bar">
+                    </button>
+                </div>
+            </div>
+            <div 
+                id="listMenu" 
+                class="flex absolute left-0 bg-gray-900 justify-center w-full mt-20 pr-3 gap-2 lg:hidden opacity-0 scale-y-0 transform origin-top transition-all duration-300 ease-in-out">
+                <ul class="grid grid-cols-1 place-items-center text-gray-200">
+                    <li class="hover-menu-2"><a href="./index.html">HOME</a></li>
+                    <li class="hover-menu-2"><a href="./indexMenu.html">MENU</a></li>
+                    <li class="hover-menu-2"><a href="./indexReservation.html">RESERVATION</a></li>
+                    <li class="hover-menu-2"><a href="./indexOrder.html">ORDER ONLINE</a></li>
+                </ul>
+            </div>
+            
+            <div class="flex flex-col items-center justify-center h-30 mt-45 lg:mt-40">
+                <h1 class="custom-text1">RESERVATION</h1>
+            </div>
+        </div>
+    </header>
+    <!-- CONTENT SECTION -->
+    <section class="w-full bg-amber-100 p-10">
+        <div class="container2 flex flex-col items-center justify-center gap-8 border-2 p-8">
+            <h1 class="text-xl lg:text-3xl">Formulir Reservasi</h1>
+            <form class="flex flex-col lg:gap-x-8">
+                <div class="flex flex-col lg:flex-row justify-center items-center lg:gap-x-8">
+                    <div class="flex reservasi">
+                        <label for="nama">Nama:</label>
+                        <input type="text" class="form1" id="nama" name="nama" placeholder="Nama" oninput="checkFormReservation()">
+                    </div>
+                    <div class="flex reservasi">
+                        <label for="telepon">No Telepon:</label>
+                        <input type="tel" class="form1" id="telepon" name="telepon" placeholder="No Hp" oninput="checkFormReservation()">
+                    </div>
+                </div>
+                <div class="flex flex-col lg:flex-row lg:gap-x-8">
+                    <div class="flex reservasi">
+                        <label for="jumlah"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-dasharray="28" stroke-dashoffset="28" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M4 21v-1c0 -3.31 2.69 -6 6 -6h4c3.31 0 6 2.69 6 6v1" stroke-dashoffset="0"/><path d="M12 11c-2.21 0 -4 -1.79 -4 -4c0 -2.21 1.79 -4 4 -4c2.21 0 4 1.79 4 4c0 2.21 -1.79 4 -4 4Z" stroke-dashoffset="0"/></g></svg></label>
+                        <input type="text" id="jumlah" class="form1" placeholder="Jumlah" oninput="checkFormReservation()">
+                    </div>
+                    <div class="flex reservasi">
+                        <label for="tanggal"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 20 20"><path fill="currentColor" d="M5.673 0a.7.7 0 0 1 .7.7v1.309h7.517v-1.3a.7.7 0 0 1 1.4 0v1.3H18a2 2 0 0 1 2 1.999v13.993A2 2 0 0 1 18 20H2a2 2 0 0 1-2-1.999V4.008a2 2 0 0 1 2-1.999h2.973V.699a.7.7 0 0 1 .7-.699M1.4 7.742v10.259a.6.6 0 0 0 .6.6h16a.6.6 0 0 0 .6-.6V7.756zm5.267 6.877v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zm-8.333-3.977v1.666H5v-1.666zm4.166 0v1.666H9.167v-1.666zm4.167 0v1.666h-1.667v-1.666zM4.973 3.408H2a.6.6 0 0 0-.6.6v2.335l17.2.014V4.008a.6.6 0 0 0-.6-.6h-2.71v.929a.7.7 0 0 1-1.4 0v-.929H6.373v.92a.7.7 0 0 1-1.4 0z"/></svg></label>
+                        <input type="date" id="tanggal" class="form1" oninput="checkFormReservation()">
+                    </div>
+                    <div class="flex reservasi">
+                        <label for="waktu"><svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24"><g fill="none"><path d="m12.593 23.258l-.011.002l-.071.035l-.02.004l-.014-.004l-.071-.035q-.016-.005-.024.005l-.004.01l-.017.428l.005.02l.01.013l.104.074l.015.004l.012-.004l.104-.074l.012-.016l.004-.017l-.017-.427q-.004-.016-.017-.018m.265-.113l-.013.002l-.185.093l-.01.01l-.003.011l.018.43l.005.012l.008.007l.201.093q.019.005.029-.008l.004-.014l-.034-.614q-.005-.018-.02-.022m-.715.002a.02.02 0 0 0-.027.006l-.006.014l-.034.614q.001.018.017.024l.015-.002l.201-.093l.01-.008l.004-.011l.017-.43l-.003-.012l-.01-.01z"/><path fill="currentColor" d="M12 2c5.523 0 10 4.477 10 10s-4.477 10-10 10S2 17.523 2 12S6.477 2 12 2m0 2a8 8 0 1 0 0 16a8 8 0 0 0 0-16m0 2a1 1 0 0 1 .993.883L13 7v4.586l2.707 2.707a1 1 0 0 1-1.32 1.497l-.094-.083l-3-3a1 1 0 0 1-.284-.576L11 12V7a1 1 0 0 1 1-1"/></g></svg></label>
+                        <input type="time" id="waktu" class="form1" oninput="checkFormReservation()">
+                    </div>
+                </div>
+            </form>
+            <form id="booking-form" onsubmit="showBookingPopUp(event)">
+                <label for="submit" id="booking-btn" 
+                    class="cursor-pointer bg-orange-400 p-4 w-8 rounded-xl text-lg aria-disabled:pointer-events-none aria-disabled:opacity-50"
+                    aria-disabled="true">
+                    Booking
+                </label>
+                <input type="submit" id="submit" class="hidden">
+            </form>
+            <!-- Pop Up Booking Sukses -->
+            <div id="booking-success" class="hidden fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center">
+                <div class="bg-white p-6 rounded shadow-lg text-center">
+                    <h1 class="text-xl mb-2 font-semibold text-green-600">✅ Booking Sukses!</h1>
+                    <p>Terima kasih anda telah malakukan reservasi.</p>
+                    <button onclick="closeBookingPopUp()" class="mt-2 bg-blue-400 hover:bg-blue-500 text-white px-4 py-2 rounded-sm cursor-pointer">OK</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- FOOTER -->
+    <footer class="w-full bg-black p-10 text-amber-100">
+        <div class="flex flex-col items-center justify-center">
+            <div class="container2 flex flex-col items-center lg:grid lg:grid-cols-3 lg:justify-center lg:items-start">
+                <div class="flex flex-col items-center py-5 lg:hidden ">
+                    <h1>NEWSLETTER</h1>
+                    <label for="newsletter" class="opacity-70">Dapatkan informasi dan promo terbaru dari kami.</label>
+                    <form class="flex flex-col justify-center items-center opacity-90">
+                        <input type="email" class="bg-gray-950 h-12 w-90 my-3" placeholder="Masukkan alamat email">
+                        <label for="subscribe" class="subscribe"><p>Subscribe</p></label>
+                        <input type="submit" id="subscribe" class="hidden">
+                    </form>
+                </div>
+                <div class="flex flex-col items-center py-5">
+                    <h1>ADDRESS</h1>
+                    <p class="text-justify opacity-70">Jl. Gatot Subroto, Purwokerto Barat, Banyumas, 11450021 2295 6067 | info@ikwanresto.com</p>
+                </div>
+                <div class="flex flex-col items-center py-5">
+                    <h1>OPEN HOURS</h1>
+                    <div class="grid grid-cols-2 lg:hidden opacity-70">
+                        <p>Setiap Hari</p>
+                        <p>07:00 - 20:00</p>
+                    </div>
+                    <div class="hidden lg:grid lg:grid-cols-2 opacity-70">
+                        <div>
+                            <p>Senin</p>
+                            <p>Selasa</p>
+                            <p>Rabu</p>
+                            <p>Kamis</p>
+                            <p>Jumat</p>
+                            <p>Sabtu</p>
+                            <p>Minggu</p>
+                        </div>
+                        <div>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                            <p>07:00 - 20:00</p>
+                        </div>
+                    </div>
+                    
+                </div>
+                <div class="hidden lg:flex lg:flex-col lg:items-center lg:py-5 lg:justify-center">
+                    <h1>NEWSLETTER</h1>
+                    <label for="newsletter" class="opacity-70">Dapatkan informasi dan promo terbaru dari kami.</label>
+                    <form class="flex flex-col justify-center items-center opacity-90">
+                        <input type="email" class="bg-gray-950 h-12 w-90 my-3" placeholder="Masukkan alamat email">
+                        <label for="subscribe" class="subscribe"><p>Subscribe</p></label>
+                        <input type="submit" id="subscribe" class="hidden">
+                    </form>
+                </div>
+            </div>
+            <div class="">
+                <h1 class="opacity-70">copyright @2025 <b>Ikwan Resto</b> - All rights reserved</h1>
+            </div>
+        </div>
+    </footer>
+    <script src="./script.js"></script>
+</body>
+</html>
